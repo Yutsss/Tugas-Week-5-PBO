@@ -27,14 +27,15 @@ public class MainOrganizer {
         }
     }
 
-    public void playTrack(int index) {
-        if (index >= 0 && index < tracks.size()) {
-            Track track = tracks.get(index);
+    public void playTrack(int number) {
+        number = number - 1;
+        if (number >= 1 && number < tracks.size()) {
+            Track track = tracks.get(number);
             System.out.println("Playing file: " + track.getFilePath());
             System.out.println("Now playing: " + track.getTitle());
             player.play(track);
         } else {
-            System.out.println("Invalid track index.");
+            System.out.println("Invalid track number.");
         }
     }
 
@@ -46,11 +47,11 @@ public class MainOrganizer {
     public static void main(String[] args) {
         MainOrganizer organizer = new MainOrganizer();
 
-        organizer.addTrack("D:/Music/");
+        organizer.addTrack("../music");
 
         organizer.listAllTracks();
 
-        organizer.playTrack(0);
+        organizer.playTrack(1);
 
         organizer.playTrack(1);
 
