@@ -86,11 +86,48 @@ Berfungsi untuk memberhentikan lagu yang saat ini sedang berjalan. Pertama dilak
 
 ### **Fungsi**
 
-
+Berfungsi sebagai kelas yang menjalankan keseluruhan sistem pada music organizer.
 
 ### **Atribut**
 
+**tracks** 
 
+Merupakan representasi dari tempat penyimpanan lagu dari program yang menggunakan tipe data `ArrayList<Track>`.
+
+**player** 
+
+Variabel yang akan digunakan sebagai pemutar lagu dengan tipe data `MusicPlayer`.
+
+**trackReader**
+
+Variabel yang akan digunakan sebagai track reader dengan tipe data `TrackReader`.
 
 ### **Method**
 
+**constructor**
+
+Berfungsi untuk menginisiasi setiap atribut-atribut pada kelas dengan objek baru sesuai tipe datanya masing-masing.
+
+**addTrack**
+
+Berfungsi untuk meload lagu pada direktori dengan `folderPath` sesuai input parameter dan akan memanggil method `readTracks` pada `trackReader` dan hasilnya akan dimasukkan ke variabel `track` yang merupakan `ArrayList`.
+
+**listAllTrack**
+
+Berfungsi untuk menampilkan list lagu yang sudah di load. Pertama fungsi akan mengecek apakah sudah terdapat lagu yang di load, jika belum akan menampilkan pesan error `No tracks available.` dan jika sudah ada maka akan menampilkan setiap judul lagu yang tersimpan yang didapat dari pemanggilan method `getTitle` pada setiap objek pada `tracks` beserta sistem penomoran yang benar.
+
+**playTrack**
+
+Berfungsi untuk menjalankan lagu sesuai nomor yang diinputkan. Pertama kita akan melakukan `decrement` satu kali pada `number`, karena `ArrayList` indeksnya dimulai dari 0. Kita melakukan `decrement` karena penyetelan lagu bisa dilakukan sesuai dengan penomoran yang ditampilkan. Lalu dilakukan pengecekan apakah nomor yang dimasukkan sesuai dengan penomoran, jika tidak akan menampilkan pesan error `Invalid track number.` dan jika sesuai makan akan menjalankan lagu sesuai nomor yang diinputkan dengan memanggil method `play` pada `player`. 
+
+**stopPlaying**
+
+Berfungsi untuk berhenti menjalankan suatu lagu dengan memanggil method `stop` dari `player`.
+
+**main**
+
+Merupakan method utama yang akan menjalankan keseluruhan program. Pertama disini kita akan menginisiasi variabel `organizer` yang akan menyimpan objek dari kelas `MainOrganizer`. Lalu untuk menjalankan sistem, kita akan memanggil beberapa method pada objek `organizer`.
+
+## **Hsil**
+
+![result](Resources/screenshot/result.png)
